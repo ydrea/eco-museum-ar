@@ -1,0 +1,42 @@
+{
+  "name": "ecomuseumar",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
+    "@legendapp/state": "^2.1.15",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@supabase/supabase-js": "^2.95.3",
+    "expo": "~54.0.33",
+    "expo-auth-session": "^7.0.10",
+    "expo-av": "^16.0.8",
+    "expo-camera": "^17.0.10",
+    "expo-file-system": "^19.0.21",
+    "expo-gl": "^16.0.10",
+    "expo-gl-cpp": "^11.4.0",
+    "expo-linking": "^8.0.11",
+    "expo-location": "^19.0.8",
+    "expo-sensors": "^15.0.8",
+    "expo-sharing": "^14.0.8",
+    "expo-sqlite": "^16.0.10",
+    "expo-status-bar": "~3.0.9",
+    "i18n-js": "^4.5.2",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-gesture-handler": "^2.30.0",
+    "react-native-svg": "^15.15.3",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.0",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}

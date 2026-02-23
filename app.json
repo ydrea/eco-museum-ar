@@ -1,29 +1,67 @@
 {
   "expo": {
-    "name": "eco-museum-ar",
-    "slug": "eco-museum-ar",
-    "version": "1.0.0",
+    "name": "EcoMuseumAR",
+    "slug": "ecomuseum-ar",
+    "version": "1..",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "jsEngine": "hermes",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ff8ff"
     },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ecomuseum.esar",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera for AR experiences",
+        "NSLocationWhenInUseUsageDescription": "This app uses location for GPS-based AR content",
+        "NSMicrophoneUsageDescription": "This app uses microphone for audio recordings"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ff8ff"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.ecomuseum.esar",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.INTERNET"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera for AR experiences"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "This app uses location to provide location-based AR content"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ff8ff"
+        }
+      ]
+    ],
+    "scheme": "ecomuseumar"
   }
 }
