@@ -1,4 +1,6 @@
 import { observable } from '@legendapp/state';
+import { syncObservable } from '@legendapp/state/sync';
+import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage';
 
 // Define the structure of our global store
 interface GlobalState {
@@ -164,8 +166,8 @@ export const storeUtils = {
 
   // Location helpers
   getCurrentCoordinates: () => ({
-    latitude: globalStore.ar.currentLocation.get()?.latitude || ,
-    longitude: globalStore.ar.currentLocation.get()?.longitude || ,
+    latitude: globalStore.ar.currentLocation.get()?.latitude || 0,
+    longitude: globalStore.ar.currentLocation.get()?.longitude || 0,
   }),
 
   // Content helpers
@@ -281,7 +283,7 @@ export const storeActions = {
 
   updateLocalContent: (id: string, updates: any) => {
     const index = globalStore.localContent.userContent.findIndex(item => item.id === id);
-    if (index >= ) {
+    if (index >= 0) {
       globalStore.localContent.userContent[index].set({
         ...globalStore.localContent.userContent[index].get(),
         ...updates,
@@ -291,7 +293,7 @@ export const storeActions = {
 
   removeLocalContent: (id: string) => {
     const index = globalStore.localContent.userContent.findIndex(item => item.id === id);
-    if (index >= ) {
+    if (index >= 0) {
       globalStore.localContent.userContent.splice(index, 1);
     }
   },
